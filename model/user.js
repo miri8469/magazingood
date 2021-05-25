@@ -10,15 +10,10 @@ const UserSchema = Mongoose.Schema({
     email: {
         type: String
     },
-    adminId: {
+    magazins: [{
         type: Mongoose.Types.ObjectId,
-        ref: 'admin'
-    },
-    weatherId: [{
-        type: Mongoose.Types.ObjectId,
-        ref: 'weather'
-
-    }]
+        ref: 'magazin'
+    }],
 
 })
 module.exports = Mongoose.model('user', UserSchema)

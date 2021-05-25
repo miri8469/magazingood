@@ -10,7 +10,7 @@ const jwt = require('jsonwebtoken')
 
 
 const connectionParams = {
-    // useFindAndModify: true,
+    useFindAndModify: true,
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useCreateIndex: true,

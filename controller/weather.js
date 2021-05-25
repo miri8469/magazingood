@@ -1,5 +1,5 @@
 const request = require('request')
-const User = require('../model/user')
+const User = require('../model/category')
 const weather = require('../model/weather')
 
 const requestApi = (city) => {
