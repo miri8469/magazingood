@@ -42,5 +42,5 @@ mongoose.connect(process.env.DB_CONNECT, connectionParams).then(() => {
 // })
 app.use('/', router)
 app.listen(3007, () => {
-    console.log('listen to 3007!');
+    console.log('listen to 3007');
 })
