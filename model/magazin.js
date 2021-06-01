@@ -15,6 +15,10 @@ const MagazinSchema = Mongoose.Schema({
     body_2: {
         type: String
     },
+    userId:{
+        type: Mongoose.Types.ObjectId,
+        ref: 'user'
+    },
     categoreis: [{
         type: Mongoose.Types.ObjectId,
         ref: 'category'

@@ -10,4 +10,4 @@ const SignUp = (req, res) => {
     })
 }
 
-module.exports={SignUp}
+module.exports = { SignUp }

@@ -1,11 +1,17 @@
 const router = require("express").Router();
 const user = require('../controller/user');
-const magazin=require('../controller/magazin');
+const magazin = require('../controller/magazin');
+const category = require('../controller/categoriesController');
 //user
 router.post('/SignUp', user.SignUp);
-router.post('/createMagazin',magazin.createMagazin)
+router.post('/createMagazin/:userName', magazin.createMagazin)
 // router.get('/loginUser/:id', user.loginUser);
 //router.get('/MyJwt/:name',user.MyJwt);
+
+
+// category
+router.post('/createCategory/', category.createCategory)
+
 
 //Admin
 // router.post('/addAdmin', Admin.addAdmin)
