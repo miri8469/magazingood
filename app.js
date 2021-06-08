@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 const router = require('./route/api')
 const jwt = require('jsonwebtoken')
-
+const categoryRouter=require('./route/categoryRout')
 
 const connectionParams = {
     useFindAndModify: true,
@@ -44,6 +44,8 @@ mongoose.connect(process.env.DB_CONNECT, connectionParams).then(() => {
 
 
 app.use('/', router)
+app.use('/categoryRout', categoryRouter)
+
 app.listen(3007, () => {
     console.log('listen to 3007!');
 })

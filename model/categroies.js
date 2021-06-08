@@ -4,10 +4,10 @@ const categroiesSchema = Mongoose.Schema({
     name: {
         type: String
     },
-    // magazinId:{
-    //     type: Mongoose.Types.ObjectId,
-    //     ref: 'magazin'
-    // },
+    magazinId:{
+        type: Mongoose.Types.ObjectId,
+        ref: 'magazin'
+    },
     posts: [{
         type: Mongoose.Types.ObjectId,
         ref: 'post'
