@@ -1,21 +1,15 @@
 const router = require("express").Router();
 const user = require('../controller/user');
 const magazin=require('../controller/magazin');
-//user
-router.post('/SignUp', user.SignUp);
-router.post('/createMagazin',magazin.createMagazin)
-// router.get('/loginUser/:id', user.loginUser);
-//router.get('/MyJwt/:name',user.MyJwt);
+const post = require('../controller/post')
 
-//Admin
-// router.post('/addAdmin', Admin.addAdmin)
-// router.delete('/deleteUserByAdmin/:userId', Admin.deleteUserByAdmin)
-// router.get('/loginAdmin/:id', Admin.loginAdmin)
-// router.get('/getAllUserByAdmin/:adminId', Admin.getAllUserByAdmin)
-//Weather
-// router.get('/getWeather', Weather.getWeather);
-// router.get('/getAllWeatherByUser/:id', Weather.getAllWeatherByUser);
-// router.delete('/deleteWeather/:weatherId', Weather.deleteWeather);
+router.post('/SignUp', user.SignUp);
+router.post('/createMagazin/:idUser',magazin.createMagazin)
+router.get('/SignIn/:id', user.SignIn)
+router.delete('/deleteMagazin/:name', magazin.deleteMagazin);
+router.get('/findMagazin/:name', magazin.findMagazin);
+router.post('/createPost/:idMagazin' , post.createPost);
+router.post('/getPost' , post.getPost);
 
 
 
