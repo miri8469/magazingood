@@ -1,5 +1,7 @@
 const User = require('../model/user')
 
+
+
 const SignUp = (req, res) => {
     const newUser = new User(req.body)
     newUser.save().then(u => {
@@ -10,4 +12,16 @@ const SignUp = (req, res) => {
     })
 }
 
-module.exports={SignUp}
+const SignIn =(req,res)=>{
+    User.findOne({name: req.body.name, password: req.body.password})
+    .then(user => {
+        console.log(user);
+        res.status(200).json({user:user})
+    }).catch(err => {
+        console.log(err)
+        res.status(500).json({err:err})
+    })
+}
+
+
+module.exports={SignUp, SignIn}

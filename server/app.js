@@ -4,10 +4,9 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 dotenv.config()
 const bodyParser = require('body-parser')
-app.use(bodyParser.json())
 const router = require('./route/api')
 const jwt = require('jsonwebtoken')
-
+const cors = require('cors')
 
 const connectionParams = {
     useFindAndModify: true,
@@ -22,27 +21,9 @@ mongoose.connect(process.env.DB_CONNECT, connectionParams).then(() => {
 })
 
 
-// app.use('/', function (req, res, next) {
-//     console.log('middleWare');
-//     console.log('the path is : ', req.path);
-//     if (!req.path.startsWith('/login') && req.path !== 'signUp')
-//         try {
-//             console.log('All functions except login and signUp');
-//             jwt.verify(req.headers['authorization'], process.env.SECRET)
-//             console.log('jwt good');
-//             next()
-//         }
-//         catch (err) {
-//             console.log(err);
-//             res.send('not login')
-//         }
-//     else {
-//         next()
-//     }
-// })
 
-
-
+app.use(bodyParser.json())
+app.use(cors())
 app.use('/', router)
 app.listen(3007, () => {
     console.log('listen to 3007!');
