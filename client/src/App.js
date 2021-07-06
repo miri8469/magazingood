@@ -12,7 +12,7 @@ function App() {
     <Provider store={store}>
     <div>
       <Post></Post>
-      {/* <Home></Home> */}
+      <Home></Home> 
     </div>
     </Provider>
   );

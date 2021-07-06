@@ -6,10 +6,11 @@ import pic1 from '../../pictures/Pic1.jpg'
 
 
 const inisualState = {
-    posts: [{ name: "firsPost", title: "magazinPost1", descripthion: "rgrsvbrcbdjbhDHC", image: pic1 },
-    { name: "secondPost", title: "magazinPost2", descripthion: "rgrsvbrcbdjbhDHC", image: pic1 },
-    { name: "secondPost", title: "magazinPost2", descripthion: "rgrsvbrcbdjbhDHC", image: pic1 },
-    { name: "secondPost", title: "magazinPost2", descripthion: "rgrsvbrcbdjbhDHC", image: pic1 }]
+    posts:[]
+    // posts: [{ name: "firsPost", title: "magazinPost1", descripthion: "rgrsvbrcbdjbhDHC", image: pic1 },
+    // { name: "secondPost", title: "magazinPost2", descripthion: "rgrsvbrcbdjbhDHC", image: pic1 },
+    // { name: "secondPost", title: "magazinPost2", descripthion: "rgrsvbrcbdjbhDHC", image: pic1 },
+    // { name: "secondPost", title: "magazinPost2", descripthion: "rgrsvbrcbdjbhDHC", image: pic1 }]
 }
 
 const posts = {

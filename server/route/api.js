@@ -9,7 +9,8 @@ router.get('/SignIn/:id', user.SignIn)
 router.delete('/deleteMagazin/:name', magazin.deleteMagazin);
 router.get('/findMagazin/:name', magazin.findMagazin);
 router.post('/createPost/:idMagazin' , post.createPost);
-router.post('/getPost' , post.getPost);
+router.get('/getPosts/:id' , post.getPosts);
+router.get('/getPost' , post.getPost);
 
 
 

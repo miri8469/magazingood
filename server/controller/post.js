@@ -27,15 +27,35 @@ const createPost = async (req, res) => {
 //             res.status(500)  })
 
 // }
-const getPost =(req,res)=>{
-    Post.findOne({name: req.body.name})
-    .then(post => {
-        console.log(post);
-        res.status(200).json({post:post})
+const getPosts =(req,res)=>{
+    Magazin.findById(req.params.id).populate({path: 'posts'} )
+    .then(posts => {
+        console.log(posts);
+        res.status(200).json({post:posts})
     }).catch(err => {
         console.log(err)
         res.status(500).json({err:err})
     })
 }
+const getPost =(req,res)=>{
+    Post.find()
+    .then(posts => {
+        console.log(posts);
+        res.status(200).json({post:posts})
+    }).catch(err => {
+        console.log(err)
+        res.status(500).json({err:err})
+    })
+}
+// const getPost =(req,res)=>{
+//     Post.findOne({name: req.body.name})
+//     .then(post => {
+//         console.log(post);
+//         res.status(200).json({post:post})
+//     }).catch(err => {
+//         console.log(err)
+//         res.status(500).json({err:err})
+//     })
+// }
 
-module.exports = { createPost , getPost}
+module.exports = { createPost , getPosts,getPost}
